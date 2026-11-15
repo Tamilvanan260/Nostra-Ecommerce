@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body class="reveal" id="home" style="font-family: 'Poppins', sans-serif;">
+<body id="home" style="font-family: 'Poppins', sans-serif;">
     <!-- Offer section  -->
     <section id="offer" class="bg-gray-800 flex p-1.5 justify-center items-center text-white text-sm md:text-xl">
         <p>Sign Up and <b>GET 20% OFF</b> for your first Order</p>
@@ -28,8 +28,8 @@
         <h1 class="text-3xl font-extrabold text-gray-800">Nostra</h1>
         <div class="navbar-links hidden md:flex gap-10  ">
             <p class="navbar-link hover:underline"><a href="index.html">Home</a></p>
-            <p class="navbar-link hover:underline"><a href="#new_arrival">New Arrival</a></p>
-            <p class="navbar-link hover:underline"><a href="#Most_Wanted">Most Wanted</a></p>
+            <p class="navbar-link hover:underline"><a href="index.html#new_arrival">New Arrival</a></p>
+            <p class="navbar-link hover:underline"><a href="index.html#Most_Wanted">Most Wanted</a></p>
             <p class="navbar-link hover:underline"><a href="collections.html">Collections</a></p>
             <p class="navbar-link hover:underline"><a href="contactus.html">Contact Us</a></p>
         </div>
@@ -42,18 +42,191 @@
 
     <!-- side Navbar -->
     <section id="sidenav" class="bg-gray-800 fixed z-20 top-0 transition-all duration-1000"
-        style="width: 50%; height:100vh; left:-50%;">
+        style="width: 50%; height:100%; left:-50%;">
         <div class="text-right p-5 pr-5">
             <i id="closenav" style=" cursor:pointer;" class="fa-solid fa-xmark text-white"></i>
         </div>
         <div class="navbar-links text-white px-3 pt-0 ">
-            <p class="navbar-link hover:underline m-6"><a href="home">Home</a></p>
-            <p class="navbar-link hover:underline m-6"><a href="#new-arrival">New Arrival</a></p>
-            <p class="navbar-link hover:underline m-6"><a href="#most-wanted">Most Wanted</a></p>
+            <p class="navbar-link hover:underline m-6"><a href="index.html">Home</a></p>
+            <p class="navbar-link hover:underline m-6"><a href="index.html#new_arrival">New Arrival</a></p>
+            <p class="navbar-link hover:underline m-6"><a href="index.html#Most_Wanted">Most Wanted</a></p>
             <p class="navbar-link hover:underline m-6 "><a href="collections.html">Collections</a></p>
-            <p class="navbar-link hover:underline m-6"><a href="./contactus.html">Contact Us</a></p>
+            <p class="navbar-link hover:underline m-6"><a href="contactus.html">Contact Us</a></p>
         </div>
     </section>
 
+
+
+
+    <!-- Contact Us Section -->
+    <section class="px-5 md:px-20 ">
+        <div class=" text-center mt-10 ">
+            <h1 class="text-3xl md:text-4xl font-extrabold">Contact Us</h1>
+            <p class="text-sm md:text-base p-2 text-gray-600 mb-10">Have a question about your order, sizing, or
+                returns? We're here to help.</p>
+        </div>
+
+        <div
+            class="grid grid-cols-1 md:grid-cols-3 justify-center bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden  ">
+            <!--Left side-->
+            <div class="bg-gray-900 text-white p-5 h-[500px] ">
+                <h1 class="font-bold text-2xl">Get in Touch</h1>
+                <p class=" text-xs mt-3 text-gray-400 leading-relaxed">Our customer support team typically replies
+                    within 24 hours</p>
+
+                <div class="mt-10 space-y-5">
+                    <div class="flex mt-3 gap-3 items-start">
+                        <i class="fa-solid fa-location-dot text-pink-500 mt-1"></i>
+                        <span class="text-gray-300 text-sm">123 Fashion Street, Race Course, Coimbatore - 641018</span>
+                    </div>
+                    <div class="flex mt-3 gap-3 items-start">
+                        <i class="fa-solid fa-phone text-pink-500"></i>
+                        <span class="text-gray-300 text-sm">+91 98765 43210</span>
+                    </div>
+                    <div class="flex mt-3 gap-3 items-start">
+                        <i class="fa-solid fa-envelope text-pink-500"></i>
+                        <span class="text-gray-300 text-sm">support@nostra.com</span>
+                    </div>
+                </div>
+
+                <!--Social Media icon-->
+                <div class=" flex gap-5 mt-28 text-lg text-gray-400">
+                    <i class="fa-brands fa-instagram hover:text-white cursor-pointer transition"></i>
+                    <i class="fa-brands fa-twitter hover:text-white cursor-pointer transition"></i>
+                    <i class="fa-brands fa-facebook hover:text-white cursor-pointer transition"></i>
+                </div>
+            </div>
+
+            <!--Right side-->
+            <div class="mt-6 col-span-2  ">
+                <form id="contact_form" class="space-y-5 m-5 mt-0">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div >
+                            <label class="block font-semibold text-sm text-gray-700 mb-1.5">Full Name</label>
+                            <input type="text" required placeholder="Enter your name"
+                                class="w-full border border-gray-300 rounded px-3.5 py-2.5 text-sm text-gray-700 outline-none focus:border-gray-800 bg-white transition">
+                        </div>
+                        <div>
+                            <label class="block font-semibold text-sm text-gray-700 mb-1.5">Email Address</label>
+                            <input type="email" required placeholder="you@example.com"
+                                class="w-full border border-gray-300 rounded px-3.5 py-2.5 text-sm text-gray-700 outline-none focus:border-gray-800 bg-white transition">
+                        </div>
+                    </div>
+
+                    <!-- Subject / Order Query -->
+                    <div>
+                        <label class="block font-semibold text-sm text-gray-700 mb-1.5">Subject</label>
+                        <select id="contact-subject"
+                            class="w-full border border-gray-300 rounded px-3.5 py-2.5 text-sm text-gray-700 outline-none focus:border-gray-800 bg-white transition">
+                            <option value="order">Order & Delivery Status</option>
+                            <option value="return">Returns & Exchange</option>
+                            <option value="product">Product & Size Inquiry</option>
+                            <option value="other">Other Feedback</option>
+                        </select>
+                    </div>
+
+                    <!-- Message -->
+                     <div class="field">
+                        <label class="block font-semibold text-sm text-gray-700 mb-1.5">Message</label>
+                        <textarea name="" id="" required placeholder="Write your message or order ID here..."
+                                  class="w-full h-24 border border-gray-300 rounded px-3.5 py-2.5 text-sm text-gray-700 outline-none focus:border-gray-800 bg-white transition"></textarea>
+                        <label id="msgInput" class="flex justify-end text-xs md:text-sm text-gray-700 ">0 / 200 characters</label>
+                        <span class="error" id="bioError"></span>
+                    </div>
+
+                     <button type="submit" class=" bg-gray-900 text-white px-4 py-2 rounded font-semibold text-sm ">Send Message</button>
+
+
+                    <!-- Success Message (Hidden by default) -->
+                    <p id="form_success" class="hidden text-sm font-semibold text-green-700 pt-2" ><i class="fa-solid fa-circle-check mr-1"></i>Thank you! Your message has been sent. We'll get back to you soon.</p>
+
+                </form>
+
+            </div>
+
+
+
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--newsletter-->
+    <section class="text-center mb-10 mt-24">
+        <h1 class="text-3xl md:text-5xl mt-10 font-bold">Join our News Letter</h1>
+        <p class="text-gray-900 text-sm md:text-2xl mt-4">Signup for our email newspaper to get exclusive discounts,
+            updates, and more</p>
+        <input class="p-2 w-96 md:w-9/12 border-2 border-black  mt-5 " type="email">
+        <br>
+        <button
+            class="px-3 py-2 text-sm  cursor-pointer border bg-gray-900 text-white  md:px-5 md:py-3  md:text-xl hover:bg-gray-800 z-2 mt-3  rounded-2xl">
+            Subscribe <i class="fa-solid fa-arrow-right"></i></button>
+    </section>
+
+
+    <!--Footer-->
+    <footer class="bg-gray-900 text-white pt-12 pb-8 px-6 md:px-16 mt-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 border-b  border-gray-700 pb-8">
+
+            <!-- Column 1 -->
+            <div>
+                <h2 class="text-4xl font-bold mb-3">Nostra</h2>
+                <p class="text-gray-400 text-sm leading-relaxed">Elevate your everyday style with our curated summer and
+                    casual collections. Quality fabrics crafte for modern comfort.</p>
+                <div class="flex gap-5 mt-5 text-xl">
+                    <i class="fa-brands fa-instagram cursor-pointer hover:text-gray-400 transition"></i>
+                    <i class="fa-brands fa-twitter cursor-pointer hover:text-gray-400 transition"></i>
+                    <i class="fa-brands fa-facebook cursor-pointer hover:text-gray-400 transition"></i>
+                </div>
+            </div>
+
+            <!-- Column 2 -->
+            <div>
+                <h3 class="text-lg font-semibold mb-3">Quick Links</h3>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><a href="index.html#home" class="hover:text-white transition">Home</a></li>
+                    <li><a href="index.html#new_arrival" class="hover:text-white transition">New Arrival</a></li>
+                    <li><a href="index.html#Most_Wanted" class="hover:text-white transition">Most Wanted</a></li>
+                    <li><a href="collections.html" class="hover:text-white transition">Collections</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3-->
+            <div>
+                <h3 class="text-lg font-semibold mb-3">Customer Care</h3>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><a href="contactus.html" class="hover:text-white transition">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-white transition">Shipping & Returns</a></li>
+                    <li><a href="#" class="hover:text-white transition">Size Guide</a></li>
+                    <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Bottom Copyright -->
+        <div class="text-center text-gray-500 text-sm mt-6">
+            © 2026 Nostra. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="contact.js"></script>
+
 </body>
+
 </html>

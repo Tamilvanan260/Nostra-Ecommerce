@@ -20,6 +20,8 @@ closenav.addEventListener("click",function(){
     sidenav.style.left="-50%"
 })
 
+
+
 //image Slider
 
 let currentSlide = 0;
@@ -44,6 +46,7 @@ function changeSlide(direction) {
 
 
 
+//reveal
 const reveals = document.querySelectorAll(".reveal");
 
 const observer = new IntersectionObserver((entries) => {

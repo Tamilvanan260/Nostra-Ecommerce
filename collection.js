@@ -182,7 +182,7 @@ clear_btn.addEventListener("click", function () {
 //     var enteredValue = event.target.value.toUpperCase()
 
 //     cards.forEach(function (card) {
-//         // card-ல இருக்கும் brand name text (p tag)
+//         // card brand name text (p tag)
 //         var brandName = card.querySelector("p").textContent.toUpperCase();
 
 //         if (brandName.indexOf(enteredValue) < 0) {
@@ -194,7 +194,7 @@ clear_btn.addEventListener("click", function () {
 // });
 
 
-//search Bar Method 2 using For loop
+//search Bar laptop screen Method 2 using For loop
 var search = document.getElementById("search")
 var cards = document.querySelectorAll(".product-card");
 // var plist = document.querySelectorAll("p")
@@ -214,7 +214,7 @@ search.addEventListener("keyup", function (event) {
 
 
 
-//search Bar phone Method 2 using For loop
+//search Bar phone screen Method 2 using For loop
 var search_int = document.getElementById("search-int")
 var cards = document.querySelectorAll(".product-card");
 // var plist = document.querySelectorAll("p")
@@ -233,12 +233,6 @@ search_int.addEventListener("keyup", function (event) {
     }
 
 })
-
-
-
-
-
-
 
 
 
