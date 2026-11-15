@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body id="home" style="font-family: 'Poppins', sans-serif;">
+<body class="reveal" id="home" style="font-family: 'Poppins', sans-serif;">
     <!-- Offer section  -->
     <section id="offer" class="bg-gray-800 flex p-1.5 justify-center items-center text-white text-sm md:text-xl">
         <p>Sign Up and <b>GET 20% OFF</b> for your first Order</p>
@@ -24,7 +24,7 @@
     </section>
 
     <!-- Navbar -->
-    <nav class="navbar flex justify-between items-center p-3  md:p-5 sticky top-0 z-10  bg-white left-0 ">
+    <nav class="navbar flex justify-between items-center p-3  md:p-5 sticky top-0 z-10  bg-white left-0 shadow-md">
         <h1 class="text-3xl font-extrabold text-gray-800">Nostra</h1>
         <div class="navbar-links hidden md:flex gap-10  ">
             <p class="navbar-link hover:underline"><a href="#home">Home</a></p>
@@ -56,32 +56,32 @@
     </section>
 
     <!-- Image Slider Container -->
-    <section class="relative w-full overflow-hidden p-2" style="height: 500px;">
+    <section class="relative w-full overflow-hidden p-2 h-64 sm:h-80 md:h-96 " >
 
-        <!-- Slides Wrapper - No gap between images -->
+        <!-- Slides Wrapper-->
         <div id="slides-wrapper" class="flex h-full transition-transform duration-500 ease-in-out">
 
             <!-- Slide 1 -->
             <div class="relative flex-shrink-0 h-full w-full">
-                <img src="./image/img1.avif" class="w-full h-full object-cover object-top " alt="slide1">
+                <img src="./image/img1.avif" class="w-full h-full object-contain md:object-cover object-top " alt="slide1">
                 <div class="absolute inset-0 bg-black/40"></div>
             </div>
 
             <!-- Slide 2 -->
             <div class="relative flex-shrink-0 h-full w-full">
-                <img src="./image/img2.webp" class="w-full h-full object-cover object-top" alt="slide2">
+                <img src="./image/img2.webp" class="w-full h-full object-contain md:object-cover object-top" alt="slide2">
                 <div class="absolute inset-0 bg-black/40"></div>
             </div>
 
             <!-- Slide 3 -->
             <div class="relative flex-shrink-0 h-full w-full">
-                <img src="./image/img3.jpg" class="w-full h-full object-cover object-top" alt="slide3">
+                <img src="./image/img3.jpg" class="w-full h-full object-contain md:object-cover object-top" alt="slide3">
                 <div class="absolute inset-0 bg-black/40"></div>
             </div>
 
             <!-- Slide 4 -->
             <div class="relative flex-shrink-0 h-full w-full">
-                <img src="./image/img4.png" class="w-full h-full object-cover object-top" alt="slide4">
+                <img src="./image/img4.png" class="w-full h-full object-contain md:object-cover object-top" alt="slide4">
                 <div class="absolute inset-0 bg-black/40"></div>
             </div>
 
@@ -99,13 +99,13 @@
 
         <!-- Left Arrow -->
         <button onclick="changeSlide(-1)"
-            class="absolute left-5 md:left-20 top-56 md:top-1/3 -translate-y-1/2 z-3 text-white  transition hover:scale-110 bg-transparent border-none cursor-pointer">
+            class="absolute left-16 sm:left-28  md:left-20 top-28 md:top-1/3 -translate-y-1/2 z-3 text-white  transition hover:scale-110 bg-transparent border-none cursor-pointer">
             <i class="fa-solid fa-chevron-left text-6xl md:text-8xl"></i>
         </button>
 
         <!-- Right Arrow -->
         <button onclick="changeSlide(1)"
-            class="absolute right-5 md:right-20 top-56 md:top-1/3 -translate-y-1/2 text-white z-3 transition hover:scale-110 bg-transparent border-none cursor-pointer">
+            class="absolute right-16 sm:right-28  md:right-20 top-28 md:top-1/3 -translate-y-1/2 text-white z-3 transition hover:scale-110 bg-transparent border-none cursor-pointer">
             <i class="fa-solid fa-chevron-right text-6xl md:text-8xl"></i>
         </button>
 
@@ -113,8 +113,8 @@
 
 
     <!--   Brands section  -->
-    <section class="mt-20 px-5 mb-5">
-        <h1 class="text-2xl font-bold mb-2 ">Brands</h1>
+    <section class="reveal mt-20 px-5 mb-5">
+        <h1 class="md:text-3xl text-3xl font-bold mb-2 ">Brands</h1>
 
         <div class="grid grid-cols-2 sm:grid-cols-3 md:flex md:justify-between md:items-center gap-8 ">
 
@@ -148,16 +148,16 @@
                 <p class="text-base md:text-xl font-medium">Ralph Lauren</p>
             </div>
 
-            <div class="brands-item flex flex-col items-center text-center gap-2 col-span-2 sm:col-span-1">
+            <div class="brands-item flex flex-col items-center text-center gap-2 col-span-2 sm:col-span-3 ">
                 <img class="w-20 h-20 object-contain" src="./image/logo7.webp" alt="Hennes & Mauritz">
                 <p class="text-base md:text-xl font-medium">Hennes & Mauritz</p>
             </div>
 
         </div>
     </section>
-
+    
     <!--   customer experiences section  -->
-    <section>
+    <section class="reveal">
         <div class="grid grid-cols-2 mt-20 mr-2 items-center">
             <h1 class="font-bold text-3xl px-5">We Provide Best
                 <br>
@@ -210,7 +210,7 @@
     </section>
 
     <!-- New Arrivals -->
-    <section class="mt-10 px-5 " id="new_arrival">
+    <section class="reveal mt-10 px-5 " id="new_arrival">
         <h1 class="text-2xl font-bold  mb-6">New Arrivals</h1>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-8 mb-5 ">
             <div class="flex flex-col items-center text-center">
@@ -251,7 +251,7 @@
     </section>
 
     <!-- Most Wanted -->
-    <section id="Most_Wanted">
+    <section class="reveal" id="Most_Wanted">
         <h1 class="p-5 text-2xl font-bold mt-10">Most Wanted</h1>
         <div class="flex overflow-x-auto gap-5 m-5 scroll-smooth">
             <!-- 1 -->
@@ -366,7 +366,7 @@
     </section>
 
     <!--AD offer-->
-    <section class="p-2 mb-5">
+    <section class="reveal p-2 mb-5">
         <div class="bg-gray-800 mt-10 w-full grid md:grid-cols-2 items-center ">
             <img class="w-full h-full p-5 " src="./image/offer.jpg" alt="">
             <div class="mb-5 ml-5">
@@ -377,7 +377,7 @@
     </section>
 
     <!--newsletter-->
-    <section class="text-center mb-10">
+    <section class="reveal text-center mb-10">
         <h1 class="text-3xl md:text-5xl mt-10 font-bold">Join our News Letter</h1>
         <p class="text-gray-900 text-sm md:text-2xl mt-4">Signup for our email newspaper to get exclusive discounts,
             updates, and more</p>
@@ -433,22 +433,6 @@
             © 2026 Nostra. All rights reserved.
         </div>
     </footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <script src="./index.js"></script>
 </body>

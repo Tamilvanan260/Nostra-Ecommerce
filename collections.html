@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nostra Collections</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind CSS - npm build output -->
+    <link rel="stylesheet" href="./src/output.css">
+    <link href=" https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css " rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body id="home" style="font-family: 'Poppins', sans-serif;">
+    <!-- Offer section  -->
+    <section id="offer" class="bg-gray-800 flex p-1.5 justify-center items-center text-white text-sm md:text-xl">
+        <p>Sign Up and <b>GET 20% OFF</b> for your first Order</p>
+        <i id="offer-close" style="margin-left: 10%; cursor: pointer;" class="fa-solid fa-xmark"></i>
+    </section>
+
+    <!-- Navbar -->
+    <nav
+        class="navbar flex justify-between items-center px-3 md:px-5 h-16 md:h-20 sticky top-0 z-10 left-0 shadow-md bg-white">
+        <h1 class="text-2xl flex md:text-3xl font-extrabold text-gray-800">Nostra</h1>
+
+        <div class=" gap-5 md:text-base text-sm navbar-links flex md:gap-8 h-full  ">
+            <div class="gap-5 md:text-base text-sm navbar-links flex md:gap-8 h-full">
+                <p class="navbar-link flex items-center cursor-pointer font-semibold h-full border-b-4 border-transparent hover:border-blue-500 transition duration-300"><a href="collections.html?category=men">MEN</a></p>
+                <p class="navbar-link flex items-center cursor-pointer font-semibold h-full border-b-4 border-transparent hover:border-pink-500 transition duration-300"><a href="collections.html?category=women">WOMEN</a></p>
+                <p class="navbar-link flex items-center cursor-pointer font-semibold h-full border-b-4 border-transparent hover:border-yellow-300 transition duration-300"><a href="collections.html?category=kids">KIDS</a></p>
+                <p class="navbar-link flex items-center cursor-pointer font-semibold h-full border-b-4 border-transparent hover:border-red-500 transition duration-300"><a href="index.html">Home</a></p>
+                <p class="md:flex hidden navbar-link items-center cursor-pointer font-semibold h-full border-b-4 border-transparent hover:border-purple-500 transition duration-300"><a href="collections.html">Collections</a></p>
+                <p class="md:flex hidden navbar-link items-center cursor-pointer font-semibold h-full border-b-4 border-transparent hover:border-yellow-500 transition duration-300"><a href="./contactus.html">Contact Us</a></p>
+            </div>
+        </div>
+
+        <div id="menuico" class="navbar-menu-toggle md:hidden">
+            <i id="side-navbar-activate" class="fa-solid fa-bars cursor-pointer"></i>
+        </div>
+
+
+        <!--2 seacrch bar nav-->
+        <div class="hidden md:flex  gap-20">
+            <div
+                class="hidden  sm:flex items-center bg-gray-100 border border-transparent focus-within:bg-white rounded focus-within:border-gray-300 px-3 py-2 w-64 md:w-80 transition ">
+                <i class="fa-solid fa-magnifying-glass text-gray-500 text-sm mr-3"></i>
+                <input class="bg-transparent outline-none text-sm text-gray-700 w-full placeholder-gray-500 "
+                    type="text" placeholder="Search for products, brands and more.. " id="search">
+            </div>
+
+            <!--3rd section Nav-->
+            <div class="flex items-center gap-6">
+                <div class="flex flex-col  items-center">
+                    <i class="fa-regular fa-user text-lg text-gray-700"></i>
+                    <p class="text-xs font-bold mt-1">Profile</p>
+                </div>
+                <div class="flex flex-col  items-center">
+                    <i class="fa-regular fa-heart text-lg text-gray-700"></i>
+                    <p class="text-xs font-bold mt-1">Wishlist</p>
+                </div>
+                <div class="flex flex-col  items-center">
+                    <i class="fa-solid fa-bag-shopping text-lg text-gray-700"></i>
+                    <p class="text-xs font-bold mt-1">Bag</p>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- side Navbar -->
+    <section id="sidenav" class="bg-gray-800 fixed z-20 top-0 transition-all duration-1000"
+        style="width: 50%; height:100vh; left:-50%;">
+        <div class="text-right p-5 pr-5">
+            <i id="closenav" style=" cursor:pointer;" class="fa-solid fa-xmark text-white"></i>
+        </div>
+        <div class="navbar-links text-white px-3 pt-0 ">
+            <p class="navbar-link hover:underline m-6"><a href="home">Home</a></p>
+            <p class="navbar-link hover:underline m-6"><a href="#new-arrival">New Arrival</a></p>
+            <p class="navbar-link hover:underline m-6"><a href="#most-wanted">Most Wanted</a></p>
+            <p class="navbar-link hover:underline m-6 "><a href="collections.html">Collections</a></p>
+            <p class="navbar-link hover:underline m-6"><a href="./contactus.html">Contact Us</a></p>
+        </div>
+    </section>
+
+
+    <!-- Collections Section -->
+    <section class="mt-4">
+        <!-- filter -->
+        <div class="flex flex-col md:flex-row md:items-center px-4 md:px-6 py-4 border-b border-gray-200 bg-white">
+            <div class="flex items-center gap-16 w-full md:w-60 justify-between md:justify-start ">
+                <h1 class="font-bold text-gray-800 tracking-wide text-sm ">FILTER</h1>
+                <button id="clear-filters" class=" text-sm font-bold text-pink-500 cursor-pointer "
+                    style="display: none;">CLEAR ALL</button>
+            </div>
+
+            <!-- 2. Phone Search Bar (Mela varum) -->
+            <div class="w-full md:hidden">
+                <div
+                    class="mt-5 mb-3 flex items-center bg-gray-100 border border-transparent focus-within:bg-white rounded focus-within:border-gray-300 px-4 py-2 w-80 transition">
+                    <i class="fa-solid fa-magnifying-glass text-gray-500 text-xs mr-2"></i>
+                    <input 
+                        class="bg-transparent outline-none text-xs text-gray-700 w-full placeholder-gray-500"
+                        type="text" placeholder="Search for products..." id="search-int">
+                </div>
+            </div>
+
+            <!-- 3. Quick Filter Tabs (Search bar-ku kela varum) -->
+            <div
+                class="flex items-center gap-3 lg:gap-10 text-sm text-gray-700 w-full md:w-auto md:flex-1 overflow-x-auto">
+                <span class="whitespace-nowrap flex-shrink-0 cursor-pointer hover:bg-gray-100 px-3 py-1 rounded-full">
+                    Add-Ons <i class="fa-solid fa-chevron-down text-xs ml-1 text-gray-400"></i>
+                </span>
+                <span class="whitespace-nowrap flex-shrink-0 cursor-pointer hover:bg-gray-100 px-3 py-1 rounded-full">
+                    Bundles <i class="fa-solid fa-chevron-down text-xs ml-1 text-gray-400"></i>
+                </span>
+                <span class="whitespace-nowrap flex-shrink-0 cursor-pointer hover:bg-gray-100 px-3 py-1 rounded-full">
+                    Collar <i class="fa-solid fa-chevron-down text-xs ml-1 text-gray-400"></i>
+                </span>
+                <span class="whitespace-nowrap flex-shrink-0 cursor-pointer hover:bg-gray-100 px-3 py-1 rounded-full">
+                    Fabrics <i class="fa-solid fa-chevron-down text-xs ml-1 text-gray-400"></i>
+                </span>
+                <span class="whitespace-nowrap flex-shrink-0 cursor-pointer hover:bg-gray-100 px-3 py-1 rounded-full">
+                    Fashion Trends <i class="fa-solid fa-chevron-down text-xs ml-1 text-gray-400"></i>
+                </span>
+                <strong class=" flex-shrink-0 cursor-pointer">+23 more</strong>
+            </div>
+
+            <!-- 4. Recommeded Box -->
+            <div id="sort-dropdown" class="hidden md:block relative flex-shrink-0">
+                <div id="sort-box"
+                    class="flex items-center justify-between border border-gray-300 px-3.5 py-2 text-sm text-gray-700 bg-white cursor-pointer w-64 ">
+                    <span class="">Sort by : <strong>Recommended</strong></span>
+                    <i class="fa-solid fa-chevron-down text-xs ml-4 mt-1  text-gray-400"></i>
+                </div>
+                <ul id="cilck-sort"
+                    class="absolute  w-64 z-20 bg-white space-y-3 p-5 text-sm border border-t-0 border-gray-300 shadow-lg text-gray-600"
+                    style="display: none;">
+                    <li>Recommended</li>
+                    <li>What's New</li>
+                    <li>Popularity</li>
+                    <li>Better Discount</li>
+                    <li>Price: High to Low</li>
+                    <li>Price: Low to High</li>
+                    <li>Customer Rating</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="flex ">
+
+            <!-- Left Sidebar Filters -->
+            <aside class="reveal md:w-60  border-r border-gray-200 flex-shrink-0 bg-white p-5 space-y-6">
+
+                <!-- Category (Radio: Men, Women, Kids) -->
+                <div class="border-b border-gray-200 pb-4 space-y-2.5 text-sm font-semibold text-gray-800">
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="category" value="men" class="filter-input"> Men
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="category" value="women" class="filter-input"> Women
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="category" value="kids" class="filter-input"> Kids
+                    </label>
+                </div>
+
+                <!-- Occasion -->
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="font-bold text-sm text-gray-800 mb-3">Occasion</h3>
+                    <div class="space-y-2 text-sm text-gray-900">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" value="summer" class="filter-input occasion-box"> Summer
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" value="party" class="filter-input occasion-box"> Party
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" value="beach" class="filter-input occasion-box"> Beach
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Colors -->
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="font-bold text-sm text-gray-800 mb-3">Colors</h3>
+                    <div class="space-y-2 text-sm text-gray-900">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" value="red" class="filter-input color-box"> Red
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" value="blue" class="filter-input color-box"> Blue
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" value="white" class="filter-input color-box"> White
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" value="green" class="filter-input color-box"> Green
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Arrivals -->
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="font-bold text-sm text-gray-800 mb-3">Arrivals</h3>
+                    <div class="space-y-2 text-sm text-gray-900">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" value="new" class="filter-input arrival-box"> New
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" value="old" class="filter-input arrival-box"> Old
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Brand -->
+                <div>
+                    <h3 class="font-bold text-sm text-gray-800 mb-3">Brand</h3>
+                    <div class="space-y-2 text-sm text-gray-900">
+                        <label class="flex items-center gap-3 cursor-pointer"><input type="checkbox"
+                                value="new">Roadster<small class="text-gray-600 hidden md:block">(8995)</small></label>
+                        <label class="flex items-center gap-3 cursor-pointer"><input type="checkbox"
+                                value="new">Crimsoune Club<small class="text-gray-600 hidden md:block">(9149)</small></label>
+                        <label class="flex items-center gap-3 cursor-pointer"><input type="checkbox"
+                                value="new">HIGHLANDER<small class="text-gray-600 hidden md:block">(7632)</small></label>
+                        <label class="flex items-center gap-3 cursor-pointer"><input type="checkbox" value="new">HERE &
+                            NOW<small class="text-gray-600 hidden md:block">(3920)</small></label>
+                        <label class="flex items-center gap-3 cursor-pointer"><input type="checkbox" value="new">Mast &
+                            Harbour<small class="text-gray-600 hidden md:block">(6547)</small></label>
+                        <label class="flex items-center gap-3 cursor-pointer"><input type="checkbox" value="new">Van
+                            Heusen<small class="text-gray-600 hidden md:block">(9329)</small></label>
+                        <label class="flex items-center gap-3 cursor-pointer"><input type="checkbox"
+                                value="new">Arrow<small class="text-gray-600 hidden md:block">(8464)</small></label>
+                        <label class="flex items-center gap-3 cursor-pointer"><input type="checkbox"
+                                value="new">CAHOOT<small class="text-gray-600 hidden md:block">(6474)</small></label>
+                    </div>
+                </div>
+
+            </aside>
+
+            <main class="reveal flex-1 p-5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- man red 1 -->
+                    <div class="product-card group cursor-pointer" data-category="men" data-occasion="summer"
+                        data-color="red" data-arrival="new">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/manred.jpg" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div >
+                            <p class="font-semibold mt-2 md:text-base">RARE RABBIT</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Red Summer Casual Shirt</p>
+                            <p class="font-semibold">Rs. 1352 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-3299</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(59%OFF)</span></p>
+                        </div>
+                    </div>
+                    <!-- man red 2 -->
+                    <div class="product-card group cursor-pointer" data-category="men" data-occasion="beach"
+                        data-color="red" data-arrival="old">
+                        <div class="relative overflow-hidden">
+                            <img src="./image/manred2.jpg" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <p class="font-semibold mt-2 md:text-base">US POLO ASSN</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Striped Beach Casual Shirt</p>
+                            <p class="font-semibold">Rs. 899 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-1999</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(55%OFF)</span></p>
+                        </div>
+                    </div>
+                    <!-- man red 3 -->
+                    <div class="product-card group cursor-pointer" data-category="men" data-occasion="party"
+                        data-color="red" data-arrival="new">
+                        <div class="relative overflow-hidden">
+                            <img src="./image/manred3.webp" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <p class="font-semibold mt-2 md:text-base">HIGHLANDER'S</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Dark Red Party Fit Shirt</p>
+                            <p class="font-semibold">Rs. 2199 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-3999</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(45%OFF)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- man green 1 -->
+                    <div class="product-card group cursor-pointer" data-category="men" data-occasion="summer"
+                        data-color="green" data-arrival="new">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/mangreen.jpg" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <p class="font-semibold mt-2 md:text-base">HRX BY HRITHIK ROSHAN</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Olive Green Summer Polo Shirt</p>
+                            <p class="font-semibold">Rs. 549 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-1299</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(57%OFF)</span></p>
+                        </div>
+                    </div>
+
+
+                    <!-- women green 2 -->
+                    <div class="product-card group cursor-pointer" data-category="women" data-occasion="summer"
+                        data-color="green" data-arrival="old">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/womengreen2.webp" alt=""
+                                class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <p class="font-semibold mt-2 md:text-base">W FOR WOMAN</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Mint Green Summer Cotton Top</p>
+                            <p class="font-semibold">Rs. 1899 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-3799</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(50%OFF)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- women green 3 -->
+                    <div class="product-card group cursor-pointer" data-category="women" data-occasion="beach"
+                        data-color="green" data-arrival="new">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/womengreen3.webp" alt=""
+                                class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div >
+                        <div class="container">
+                            <p class="font-semibold mt-2 md:text-base">TOKYO TALKIES</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Olive Green Beach Resort Dress</p>
+                            <p class="font-semibold">Rs. 799 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-1999</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(60%OFF)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- women blue 1 -->
+                    <div class="product-card group cursor-pointer" data-category="women" data-occasion="party"
+                        data-color="blue" data-arrival="new">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/womenblue.jpg" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <p class="font-semibold mt-2 md:text-base">MANGO</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Navy Blue Party Satin Dress</p>
+                            <p class="font-semibold">Rs. 2290 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-4590</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(50%OFF)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- women blue 2 -->
+                    <div class="product-card group cursor-pointer" data-category="women" data-occasion="beach"
+                        data-color="blue" data-arrival="old">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/womenblue2.jpg" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <p class="font-semibold mt-2 md:text-base">VEROMODA</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Cyan Blue Beach Kaftan Dress</p>
+                            <p class="font-semibold">Rs. 999 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-2299</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(56%OFF)</span></p>
+                        </div>
+                    </div>
+
+
+                    <!-- man blue 3 -->
+                    <div class="product-card group cursor-pointer" data-category="men" data-occasion="party"
+                        data-color="blue" data-arrival="new">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/manblue3.jpg" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <p class="font-semibold mt-2 md:text-base">ROADSTER</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Royal Blue Party Blazer Shirt</p>
+                            <p class="font-semibold">Rs. 899 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-1999</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(55%OFF)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- man white 1 -->
+                    <div class="product-card group cursor-pointer" data-category="men" data-occasion="summer"
+                        data-color="white" data-arrival="new">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/manwhite.webp" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <p class="font-semibold mt-2 md:text-base">WRANGLER</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Pure White Summer Cotton Shirt</p>
+                            <p class="font-semibold">Rs. 1299 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-2599</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(50%OFF)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- man white 2 -->
+                    <div class="product-card group cursor-pointer" data-category="men" data-occasion="party"
+                        data-color="white" data-arrival="old">
+                        <div class="relative overflow-hidden">
+                            <img src="./image/manwhite2.webp" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <p class="font-semibold mt-2 md:text-base">INDIAN TERRAIN</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">White Slim Fit Party Shirt</p>
+                            <p class="font-semibold">Rs. 1599 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-3199</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(50%OFF)</span></p>
+                        </div>
+                    </div>
+
+
+                    <!-- man white 3 -->
+                    <div class="product-card group cursor-pointer" data-category="men" data-occasion="beach"
+                        data-color="white" data-arrival="new">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/manwhite3.jpg" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <p class="font-semibold mt-2 md:text-base">FOREVER 21</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">White Lace Beach Maxi Dress</p>
+                            <p class="font-semibold">Rs. 1199 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-1999</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(40%OFF)</span></p>
+                        </div>
+                    </div>
+                    <!--WOMEN CARD-->
+
+                    <!-- kids red 1 -->
+                    <div class="product-card group cursor-pointer" data-category="kids" data-occasion="party"
+                        data-color="red" data-arrival="new">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/kidred.jpg" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <p class="font-semibold mt-2 md:text-base">MAX KIDS</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Red Party Velvet Dress</p>
+                            <p class="font-semibold">Rs. 1199 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-2399</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(50%OFF)</span></p>
+                        </div>
+                    </div>
+                    <!-- kids red 2 -->
+                    <div class="product-card group cursor-pointer" data-category="kids" data-occasion="beach"
+                        data-color="red" data-arrival="old">
+                        <div class="relative overflow-hidden">
+                            <img src="./image/kidred2.webp" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div class="container">
+                        <div>
+                            <p class="font-semibold mt-2 md:text-base">NIKIDO</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Red Hawaiian Beach Shorts Set</p>
+                            <p class="font-semibold">Rs. 749 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-1499</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(50%OFF)</span></p>
+                        </div>
+                    </div>
+                    <!-- kids red 3 -->
+                    <div class="product-card group cursor-pointer" data-category="kids" data-occasion="summer"
+                        data-color="red" data-arrival="new">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/kidred3.webp" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <p class="font-semibold mt-2 md:text-base">MOTHERCARE</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Red Summer Cotton T-Shirt</p>
+                            <p class="font-semibold">Rs. 499 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-999</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(50%OFF)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- kids green 1 -->
+                    <div class="product-card group cursor-pointer" data-category="kids" data-occasion="summer"
+                        data-color="green" data-arrival="new">
+                        <div class="relative overflow-hidden">
+                            <img src="./image/kidgreen1.webp" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <p class="font-semibold mt-2 md:text-base">MARKS & SPENCER</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Lime Green Summer Casual Shorts</p>
+                            <p class="font-semibold">Rs. 1499 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-2999</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(50%OFF)</span></p>
+                        </div>
+                    </div>
+
+
+                    <!-- man green 2 -->
+                    <div class="product-card group cursor-pointer" data-category="men" data-occasion="beach"
+                        data-color="green" data-arrival="old">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/mangreenn2.jpg" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div class="container">
+                        <div>
+                            <p class="font-semibold mt-2 md:text-base">RALLEN SOLLY</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Sage Green Tropical Beach Shirt</p>
+                            <p class="font-semibold">Rs. 3499 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-6999</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(60%OFF)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- man green 3 -->
+                    <div class="product-card group cursor-pointer" data-category="men" data-occasion="party"
+                        data-color="green" data-arrival="new">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/mangreen3.jpg" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <p class="font-semibold mt-2 md:text-base">PUMA</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Forest Green Party Wear Shirt</p>
+                            <p class="font-semibold">Rs. 1439 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-3199</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(55%OFF)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- man blue 1 -->
+                    <div class="product-card group cursor-pointer" data-category="men" data-occasion="summer"
+                        data-color="blue" data-arrival="new">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/manblue.jpg" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <p class="font-semibold mt-2 md:text-base">TOMMY HILFIGER</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Navy Blue Summer Crew Shirt</p>
+                            <p class="font-semibold">Rs. 1799 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-2999</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(40%OFF)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- man blue 2 -->
+                    <div class="product-card group cursor-pointer" data-category="men" data-occasion="beach"
+                        data-color="blue" data-arrival="old">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/manblue2.webp" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <p class="font-semibold mt-2 md:text-base">JACK & JONES</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Sky Blue Beach Floral Printed Shirt</p>
+                            <p class="font-semibold">Rs. 699 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-1499</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(40%OFF)</span></p>
+                        </div>
+                    </div>
+
+
+                    <!-- women blue 3 -->
+                    <div class="product-card group cursor-pointer" data-category="women" data-occasion="summer"
+                        data-color="blue" data-arrival="new">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/womenblue3.jpg" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <p class="font-semibold mt-2 md:text-base">LIBAS</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Light Blue Summer A-Line Kurta</p>
+                            <p class="font-semibold">Rs. 1599 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-3999</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(60%OFF)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- women white 1 -->
+                    <div class="product-card group cursor-pointer" data-category="women" data-occasion="beach"
+                        data-color="white" data-arrival="new">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/womenwhite1.jpg" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <p class="font-semibold mt-2 md:text-base">FOREVER 21</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">White Lace Beach Maxi Dress</p>
+                            <p class="font-semibold">Rs. 1199<span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-1999</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(40%OFF)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- women white 2 -->
+                    <div class="product-card group cursor-pointer" data-category="women" data-occasion="party"
+                        data-color="white" data-arrival="old">
+                        <div class="relative overflow-hidden">
+                            <img src="./image/womenwhite2.jpg" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <p class="font-semibold mt-2 md:text-base">H&M STYLE</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">White Sequined Party Top</p>
+                            <p class="font-semibold">Rs. 1599<span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-3199</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(50%OFF)</span></p>
+                        </div>
+                    </div>
+
+
+                    <!-- women white 3 -->
+                    <div class="product-card group cursor-pointer" data-category="women" data-occasion="summer"
+                        data-color="white" data-arrival="new">
+                        <div class="relative overflow-hidden">
+                            <img src="./image/womenwhite3.jpg" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <p class="font-semibold mt-2 md:text-base">ZARA STYLE</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Off-White Summer Linen Dress</p>
+                            <p class="font-semibold">Rs. 1799<span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-3599</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(50%OFF)</span></p>
+                        </div>
+                    </div>
+
+<!--KID CARDS--------------------------------------->
+                    <!-- women red 1 -->
+                    <div class="product-card group cursor-pointer" data-category="women" data-occasion="party"
+                        data-color="red" data-arrival="new">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/womenred.jpg" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-semibold mt-2 md:text-base">ONLY</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Wine Red Party Bodycon Dress</p>
+                            <p class="font-semibold">Rs. 649<span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-1299</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(50%OFF)</span></p>
+                        </div>
+                    </div>
+                    <!-- women red 2 -->
+                    <div class="product-card group cursor-pointer" data-category="women" data-occasion="beach"
+                        data-color="red" data-arrival="old">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/womenred2.jpg" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-semibold mt-2 md:text-base">DRESSBERRY</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Maroon Red Printed Beach Coverup</p>
+                            <p class="font-semibold">Rs. 1399 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-2799</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(50%OFF)</span></p>
+                        </div>
+                    </div>
+                    <!-- women red 3 -->
+                    <div class="product-card group cursor-pointer" data-category="women" data-occasion="summer"
+                        data-color="red" data-arrival="old">
+                        <div class="relative overflow-hidden">
+                            <img src="./image/womenred3.jpg" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-semibold mt-2 md:text-base">BIPA BAZAAR</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Red Summer Floral Printed Kurta</p>
+                            <p class="font-semibold">Rs. 1249 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-2499</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(50%OFF)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- women green 1 -->
+                    <div class="product-card group cursor-pointer" data-category="women" data-occasion="party"
+                        data-color="green" data-arrival="new">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/womengreen.jpg" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-semibold mt-2 md:text-base">GLOBAL DESI</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Emerald Green Party Fusion Top</p>
+                            <p class="font-semibold">Rs. 849 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-1699</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(50%OFF)</span></p>
+                        </div>
+                    </div>
+
+
+                    <!-- kids green 2 -->
+                    <div class="product-card group cursor-pointer" data-category="kids" data-occasion="party"
+                        data-color="green" data-arrival="old">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/kidgreen2.jpg" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-semibold mt-2 md:text-base">LITTLE KANGAROOS</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Dark Green Party Kurta Set</p>
+                            <p class="font-semibold">Rs. 599<span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-1199</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(50%OFF)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- kids green 3 -->
+                    <div class="product-card group cursor-pointer" data-category="kids" data-occasion="party"
+                        data-color="green" data-arrival="new">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/kidgreen3.jpg" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-semibold mt-2 md:text-base">YK KIDS</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Kids Solid Casual Shirt</p>
+                            <p class="font-semibold">Rs. 1352 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-3299</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(59%OFF)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- kids blue 1 -->
+                    <div class="product-card group cursor-pointer" data-category="kids" data-occasion="summer"
+                        data-color="blue" data-arrival="new">
+                        <div class="relative overflow-hidden">
+                            <img src="./image/kidblue1.jpg" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-semibold mt-2 md:text-base">PUMA KIDS</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Bright Blue Summer Activewear Set</p>
+                            <p class="font-semibold">Rs. 549<span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-1099</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(50%OFF)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- kids blue 2 -->
+                    <div class="product-card group cursor-pointer" data-category="kids" data-occasion="party"
+                        data-color="blue" data-arrival="old">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/kidblue2.webp" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-semibold mt-2 md:text-base">GINI & JONY</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Royal Blue Party Blazer Set</p>
+                            <p class="font-semibold">Rs. 1199 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-2399</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(50%OFF)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- kids blue 3 -->
+                    <div class="product-card group cursor-pointer" data-category="kids" data-occasion="beach"
+                        data-color="blue" data-arrival="new">
+                        <div class="relative overflow-hidden">
+                            <img src="./image/kidblue3.webp" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-semibold mt-2 md:text-base">U.S. POLO KIDS</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Sky Blue Beach Polo Shirt</p>
+                            <p class="font-semibold">Rs. 799<span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-1599</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(50%OFF)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- kids white 1 -->
+                    <div class="product-card group cursor-pointer" data-category="kids" data-occasion="summer"
+                        data-color="white" data-arrival="new">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/kidwhite1.jpg" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-semibold mt-2 md:text-base">CUTECUMBER</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Pure White Summer Frock</p>
+                            <p class="font-semibold">Rs. 999<span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-1999</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(50%OFF)</span></p>
+                        </div>
+                    </div>
+
+                    <!-- kids white 2 -->
+                    <div class="product-card group cursor-pointer" data-category="kids" data-occasion="party"
+                        data-color="white" data-arrival="old">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/kidwhite2.jpg" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-semibold mt-2 md:text-base">FIRSTCRY STYLE</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">Cream White Party Ethnic Set</p>
+                            <p class="font-semibold">Rs. 899<span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-1799</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(59%OFF)</span></p>
+                        </div>
+                    </div>
+
+
+                    <!-- kids white 3 -->
+                    <div class="product-card group cursor-pointer" data-category="kids" data-occasion="beach"
+                        data-color="white" data-arrival="new">
+                        <div class="relative overflow-hidden ">
+                            <img src="./image/kidwhite3.webp" alt="" class="h-72 w-72 md:w-full md:h-72 object-cover ">
+                            <span
+                                class="absolute top-3 left-0 bg-pink-500 text-white text-sm font-bold px-2 py-0.5">NEW</span>
+                            <div
+                                class="absolute bg-white bottom-2 left-2 px-2 py-0.5 rounded text-xs font-bold flex items-center gap-1 shadow-sm ">
+                                <span>4.4</span><i class="fa-solid fa-star text-green-600 "></i>
+                                <span>|</span>
+                                <span>2.5K</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-semibold mt-2 md:text-base">HOPSCOTCH</p>
+                            <p class="font-light text-sm md:text-sm text-gray-500">White Printed Beach Set</p>
+                            <p class="font-semibold">Rs. 899 <span
+                                    class="font-light line-through text-gray-400 text-sm ml-2">R-1799</span><span
+                                    class="text-red-500 font-medium text-sm mr-1 ml-2">(50%OFF)</span></p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </main>
+
+
+
+
+
+        </div>
+
+
+    </section>
+
+    <!--Footer-->
+    <footer class="bg-gray-900 text-white pt-12 pb-8 px-6 md:px-16 mt-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 border-b  border-gray-700 pb-8">
+
+            <!-- Column 1 -->
+            <div>
+                <h2 class="text-4xl font-bold mb-3">Nostra</h2>
+                <p class="text-gray-400 text-sm leading-relaxed">Elevate your everyday style with our curated summer and
+                    casual collections. Quality fabrics crafte for modern comfort.</p>
+                <div class="flex gap-5 mt-5 text-xl">
+                    <i class="fa-brands fa-instagram cursor-pointer hover:text-gray-400 transition"></i>
+                    <i class="fa-brands fa-twitter cursor-pointer hover:text-gray-400 transition"></i>
+                    <i class="fa-brands fa-facebook cursor-pointer hover:text-gray-400 transition"></i>
+                </div>
+            </div>
+
+            <!-- Column 2 -->
+            <div>
+                <h3 class="text-lg font-semibold mb-3">Quick Links</h3>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                    <li><a href="#new_arrival" class="hover:text-white transition">New Arrival</a></li>
+                    <li><a href="#Most_Wanted" class="hover:text-white transition">Most Wanted</a></li>
+                    <li><a href="./collections.html" class="hover:text-white transition">Collections</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3-->
+            <div>
+                <h3 class="text-lg font-semibold mb-3">Customer Care</h3>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-white transition">Shipping & Returns</a></li>
+                    <li><a href="#" class="hover:text-white transition">Size Guide</a></li>
+                    <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Bottom Copyright -->
+        <div class="text-center text-gray-500 text-sm mt-6">
+            © 2026 Nostra. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="./collection.js"></script>
+</body>
+
+</html>

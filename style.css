@@ -1,15 +1,32 @@
-
+/* New Arrivals button */
   .group:hover .quick-btn {
     transform: translateY(0) ;
   }
 
-  /* Hide scrollbar for Chrome, Safari and Opera */
+
+  
+
+  /*Most Wanted */
+  /* Hide scrollbar for IE, Edge and Firefox ,for Chrome, Safari and Opera*/
 .overflow-x-auto::-webkit-scrollbar {
     display: none;
 }
-
-/* Hide scrollbar for IE, Edge and Firefox */
 .overflow-x-auto {
     -ms-overflow-style: none;  
     scrollbar-width: none;  
 }
+
+
+
+/* reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
+  }
+  
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
