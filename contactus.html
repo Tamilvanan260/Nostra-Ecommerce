@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nostra Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind CSS - npm build output -->
+    <link rel="stylesheet" href="./src/output.css">
+    <link href=" https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css " rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="reveal" id="home" style="font-family: 'Poppins', sans-serif;">
+    <!-- Offer section  -->
+    <section id="offer" class="bg-gray-800 flex p-1.5 justify-center items-center text-white text-sm md:text-xl">
+        <p>Sign Up and <b>GET 20% OFF</b> for your first Order</p>
+        <i id="offer-close" style="margin-left: 10%; cursor: pointer;" class="fa-solid fa-xmark"></i>
+    </section>
+
+    <!-- Navbar -->
+    <nav class="navbar flex justify-between items-center p-3  md:p-5 sticky top-0 z-10  bg-white left-0 shadow-md">
+        <h1 class="text-3xl font-extrabold text-gray-800">Nostra</h1>
+        <div class="navbar-links hidden md:flex gap-10  ">
+            <p class="navbar-link hover:underline"><a href="index.html">Home</a></p>
+            <p class="navbar-link hover:underline"><a href="#new_arrival">New Arrival</a></p>
+            <p class="navbar-link hover:underline"><a href="#Most_Wanted">Most Wanted</a></p>
+            <p class="navbar-link hover:underline"><a href="collections.html">Collections</a></p>
+            <p class="navbar-link hover:underline"><a href="contactus.html">Contact Us</a></p>
+        </div>
+
+
+        <div id="menuico" class="navbar-menu-toggle md:hidden">
+            <i id="side-navbar-activate" class="fa-solid fa-bars cursor-pointer"></i>
+        </div>
+    </nav>
+
+    <!-- side Navbar -->
+    <section id="sidenav" class="bg-gray-800 fixed z-20 top-0 transition-all duration-1000"
+        style="width: 50%; height:100vh; left:-50%;">
+        <div class="text-right p-5 pr-5">
+            <i id="closenav" style=" cursor:pointer;" class="fa-solid fa-xmark text-white"></i>
+        </div>
+        <div class="navbar-links text-white px-3 pt-0 ">
+            <p class="navbar-link hover:underline m-6"><a href="home">Home</a></p>
+            <p class="navbar-link hover:underline m-6"><a href="#new-arrival">New Arrival</a></p>
+            <p class="navbar-link hover:underline m-6"><a href="#most-wanted">Most Wanted</a></p>
+            <p class="navbar-link hover:underline m-6 "><a href="collections.html">Collections</a></p>
+            <p class="navbar-link hover:underline m-6"><a href="./contactus.html">Contact Us</a></p>
+        </div>
+    </section>
+
+</body>
+</html>
